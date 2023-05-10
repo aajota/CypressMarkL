@@ -6,8 +6,12 @@ describe('tarefas', () => {
         cy.visit('http://localhost:8080')
 
         cy.get('input[placeholder="Add a new Task"]')
-            .type('ajota')
-        cy.get('._listButtonNewTask_1y0mp_40').click()
+            .type('junior')
+
+        ////xpath button[text()="Create "]
+
+        cy.contains('button', 'Create').click()
+        cy.get('button[class="_listItemDeleteButton_1kgm5_52"]').click()
 
     })
 })
