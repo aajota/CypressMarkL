@@ -9,6 +9,7 @@
   "author": "AJota",
   "license": "MIT",
   "devDependencies": {
+    "@faker-js/faker": "^8.0.0",
     "cypress": "^12.2.0"
   }
 }
