@@ -27,5 +27,9 @@ describe('tarefas', () => {
         cy.contains('button', 'Create').click()
         //cy.get('button[class="_listItemDeleteButton_1kgm5_52"]').click()
 
+       // cy.get('main div p').should('be.visible').should('have.text', 'junior')
+
+        cy.contains('main div p', 'junior' ).should('be.visible')
+
     })
 })
