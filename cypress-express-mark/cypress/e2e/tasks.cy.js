@@ -58,6 +58,27 @@ describe('tarefas', () => {
             })
         })
 
+        context('atualização', ()=>{
+            it('deve concluir uma tarefa', ()=>{
+                const task = {
+                name: 'Comprar ketchup', is_done: false
+            }
+                cy.removerTaskByName(task.name)
+                cy.postTask(task)
+
+                cy.visit('http://localhost:8080/')
+
+                cy.contains('p', task.name)
+                .parent()
+                .find('button[class*=ItemToggle]')
+                .click()
+
+                cy.contains('p', task.name)
+                .should('have.css', 'text-decoration-line', 'line-through')
+
+            })
+        })
+
     })
 
 
