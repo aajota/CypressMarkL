@@ -79,6 +79,27 @@ describe('tarefas', () => {
             })
         })
 
+        context('exclusão', ()=>{
+            it('deve remover uma tarefa', ()=>{
+                const task = {
+                name: 'negatividade', is_done: false
+            }
+                cy.removerTaskByName(task.name)
+                cy.postTask(task)
+
+                cy.visit('http://localhost:8080/')
+
+                cy.contains('p', task.name)
+                .parent()
+                .find('button[class*=ItemDelete]')
+                .click()
+
+                cy.contains('p', task.name)
+                .should('not.exist')
+
+            })
+        })
+
     })
 
 
