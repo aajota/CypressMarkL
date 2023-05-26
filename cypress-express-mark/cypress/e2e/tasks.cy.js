@@ -5,11 +5,20 @@
 //import { faker } from '@faker-js/faker';
 
 describe('tarefas', () => {
+    let testData;
+
+    before(()=>{
+        cy.fixture('tasks').then(t =>{
+            testData = t
+        })
+    })
+
     context('cadastro', ()=>{
 
-        const taskName = 'Junior'
 
         it('deve cadastrar uma nova tarefa', () => {
+
+            const taskName = 'Junior'
     
             cy.removerTaskByName(taskName)
             cy.createTask(taskName)
@@ -36,10 +45,7 @@ describe('tarefas', () => {
     
         it('não deve permitir tarefa duplicada', () => {
     
-            const task = {
-                name: 'Antonio',
-                is_done: false
-            }
+            const task = test.dup
     
             cy.removerTaskByName(task.name)
             cy.postTask(task)
