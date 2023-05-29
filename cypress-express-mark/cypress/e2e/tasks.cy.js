@@ -11,6 +11,7 @@ describe('tarefas', () => {
         cy.fixture('tasks').then(t =>{
             testData = t
         })
+
     })
 
     context('cadastro', ()=>{
@@ -45,7 +46,7 @@ describe('tarefas', () => {
     
         it('não deve permitir tarefa duplicada', () => {
     
-            const task = test.dup
+            const task = testData.dup
     
             cy.removerTaskByName(task.name)
             cy.postTask(task)

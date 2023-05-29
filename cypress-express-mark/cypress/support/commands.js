@@ -54,7 +54,7 @@ Cypress.Commands.add('isRequired', (targetMessage)=>{
 
 Cypress.Commands.add('removerTaskByName', (taskName) => {
     cy.request({
-        url: Cypress.env('apiUrl') +'/helper/tasks',
+        url: Cypress.env('apiUrl') +'helper/tasks',
         method: 'DELETE',
         body: { name: taskName }
     }).then(response => {
@@ -66,7 +66,7 @@ Cypress.Commands.add('removerTaskByName', (taskName) => {
 Cypress.Commands.add('postTask', (task) => {
 
     cy.request({
-        url: Cypress.env('apiUrl') + '/tasks',
+        url: Cypress.env('apiUrl') + 'tasks',
         method: 'POST',
         body: task
 
