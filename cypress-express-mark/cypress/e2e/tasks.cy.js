@@ -19,7 +19,7 @@ describe('tarefas', () => {
 
         it('deve cadastrar uma nova tarefa', () => {
 
-            const taskName = 'Junior'
+            const taskName = 'Junior Lima'
     
             cy.removerTaskByName(taskName)
             cy.createTask(taskName)
