@@ -22,23 +22,7 @@ describe('tarefas', () => {
             const taskName = 'Junior Lima'
     
             cy.removerTaskByName(taskName)
-            cy.createTask(taskName)
-    
-            //cy.visit('http://localhost:8080')
-    
-            // cy.get('input[placeholder="Add a new Task"]')
-            //     .type(faker.music.songName())
-    
-            // cy.get('input[placeholder="Add a new Task"]')
-            //     .type(taskName)
-    
-            ////xpath button[text()="Create "]
-    
-            // cy.contains('button', 'Create').click()
-            //cy.get('button[class="_listItemDeleteButton_1kgm5_52"]').click()
-    
-            // cy.get('main div p').should('be.visible').should('have.text', 'junior')
-    
+            cy.createTask(taskName) 
             cy.contains('main div p', taskName)
                 .should('be.visible')
     
