@@ -1,9 +1,5 @@
 /// <reference types ="cypress"/>
 
-//const { method } = require("cypress/types/bluebird")
-
-//import { faker } from '@faker-js/faker';
-
 describe('tarefas', () => {
     let testData;
 
