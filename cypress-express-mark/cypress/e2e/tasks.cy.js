@@ -44,7 +44,6 @@ describe('tarefas', () => {
             cy.isRequired('This is a required field')
             })
         })
-
         context('atualização', ()=>{
             it('deve concluir uma tarefa', ()=>{
                 const task = {
@@ -62,10 +61,8 @@ describe('tarefas', () => {
 
                 cy.contains('p', task.name)
                 .should('have.css', 'text-decoration-line', 'line-through')
-
             })
         })
-
         context('exclusão', ()=>{
             it('deve remover uma tarefa', ()=>{
                 const task = {
@@ -83,10 +80,8 @@ describe('tarefas', () => {
 
                 cy.contains('p', task.name)
                 .should('not.exist')
-
             })
         })
-
     })
 
 
